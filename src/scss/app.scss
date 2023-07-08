@@ -1,0 +1,48 @@
+// @use '_reset';
+// @use '_mixins';
+@import '_reset', '_mixins';
+
+.Wrapper {
+  min-height: 70vh;
+  width: 75rem;
+  margin: auto;
+  background-color: lightblue;
+  @include flex(column, nowrap, space-between, center);
+}
+
+.Top {
+  background-color: lightcoral;
+  width: 100%;
+  @include flex(row, nowrap, flex-end, center);
+}
+svg {
+  background-color: red;
+  width: 4rem;
+  height: 1.2rem;
+}
+
+.Top-div {
+  width: 10rem;
+  margin-top: 2rem;
+  height: 2rem;
+  background-color: lightseagreen;
+  @include flex(row, nowrap, center, center);
+}
+
+.Main {
+  background-color: lightgreen;
+  height: 50vh;
+}
+
+.Quote {
+  background-color: aqua;
+  width: 50rem;
+  height: auto;
+  padding-left: 5rem;
+  border-left: 0.5rem solid #f7df94;
+  &-p {
+    font-size: 2.25rem;
+    font-weight: 500;
+    line-height: 120%;
+  }
+}

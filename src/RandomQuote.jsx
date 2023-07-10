@@ -1,7 +1,7 @@
 import { useFetch } from './UseFetch'
-
+import { Link } from 'react-router-dom'
 export default function RandomQuote() {
-  const { data, loading, error, count, setCount } = useFetch(
+  const { data, error, count, setCount } = useFetch(
     'https://api.quotable.io/random'
   )
   const handleClick = () => {
@@ -11,13 +11,13 @@ export default function RandomQuote() {
   return (
     <>
       {error && <p className='Quote-p'>Error: {error}</p>}
-      {loading && <p className='Quote-p'>Loading...</p>}
       {data && (
         <div className='Wrapper'>
           <header className='Top'>
             <div className='Top-div' onClick={handleClick}>
-              <span>random</span>
+              <span className='Top-span'>random</span>
               <svg
+                className='Top-svg'
                 stroke='currentColor'
                 fill='currentColor'
                 strokeWidth='0'
@@ -31,9 +31,38 @@ export default function RandomQuote() {
             </div>
           </header>
           <main className='Main'>
-            <div className='Quote'>
-              <p className='Quote-p'>{data.content}</p>
+            <div className='Main-quote'>
+              <p className='Main-p'>{data.content}</p>
             </div>
+            <Link to='/quotes'>
+              <div className='Data'>
+                <div className='Data-author'>
+                  <p className='Data-name'>{data.author}</p>
+                  <svg
+                    className='Data-svg'
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='38'
+                    height='38'
+                    viewBox='0 0 38 38'
+                    fill='none'>
+                    <g clipPath='url(#clip0_1_42)'>
+                      <path
+                        d='M25.3492 17.4167H6.33334V20.5833H25.3492V25.3333L31.6667 19L25.3492 12.6667V17.4167Z'
+                        fill='#f2f2f2'
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id='clip0_1_42'>
+                        <rect width='38' height='38' fill='white' />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+                <div className='Data-tags'>
+                  <span className='Data-tag'>{data.tags[0]}</span>
+                </div>
+              </div>
+            </Link>
           </main>
         </div>
       )}

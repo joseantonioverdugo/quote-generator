@@ -1,5 +1,3 @@
-// https:api.quotable.io/quotes?author=${data.authorSlug}
-
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -8,7 +6,7 @@ export default function MainContent({ params }) {
   return (
     <main className='Main'>
       <div className='Main-quote'>
-        <p className='Main-p'>{params.content}</p>
+        <p className='Main-p'> {`“${params.content}”`}</p>
       </div>
       <Link to={`/quotes?author=${params.authorSlug}`}>
         <div className='Data'>

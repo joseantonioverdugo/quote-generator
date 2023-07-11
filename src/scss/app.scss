@@ -114,3 +114,66 @@ svg {
     line-height: normal;
   }
 }
+
+.All {
+  min-height: 70vh;
+  max-width: 50rem;
+  margin: auto;
+  &-h2 {
+    margin: 2rem 0 8rem;
+    padding-left: 5rem;
+    // background-color: aqua;
+    color: #333;
+    font-family: Raleway;
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &-ul {
+    // background-color: red;
+    @include flex(column, nowrap, center, flex-start);
+    gap: 5rem;
+    // margin-bottom: 5rem;
+  }
+
+  &-li {
+    // background-color: white;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 500;
+    line-height: 120%;
+    border-left: 0.5rem solid #f7df94;
+    padding-left: 5rem;
+  }
+
+  &-buttons {
+    @include flex(row, nowrap, center, center);
+    gap: 1rem;
+    margin-top: 5rem;
+    margin-left: 5rem;
+  }
+
+  &-button {
+    width: 10rem;
+    height: 3rem;
+    background-color: #f7df94;
+    border-radius: 0.5rem;
+    border: none;
+    font-family: Raleway;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    &:hover {
+      background-color: #f2cc5a;
+    }
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}

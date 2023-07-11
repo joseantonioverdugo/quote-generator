@@ -1,6 +1,6 @@
 ## Descripción
 
-Generador de citas célebres. Proyecto construido usando la API de [quotable](https://github.com/lukePeavey/quotable)
+Generador de citas célebres. Proyecto construido usando la API de <a href="https://github.com/lukePeavey/quotable" target="_blank">quotable</a>
 
 ## Tecnologías usadas
 

@@ -1,22 +1,21 @@
 @import '_reset', '_mixins';
 
 .Wrapper {
-  min-height: 70vh;
+  min-height: 95vh;
   max-width: 75rem;
   margin: auto;
-  // background-color: lightblue;
+
   @include flex(column, nowrap, space-between, center);
 }
 
 .Top {
-  // background-color: lightcoral;
   width: 100%;
   @include flex(row, nowrap, flex-end, center);
   &-div {
     width: 10rem;
     margin-top: 2rem;
     height: 2rem;
-    // background-color: lightseagreen;
+
     @include flex(row, nowrap, center, center);
     cursor: pointer;
   }
@@ -33,16 +32,14 @@
   }
 }
 svg {
-  // background-color: red;
   width: 4rem;
   height: 1.2rem;
 }
 
 .Main {
-  // background-color: lightgreen;
   height: 50vh;
+  margin-bottom: 20rem;
   &-quote {
-    // background-color: aqua;
     max-width: 50rem;
     height: auto;
     padding-left: 5rem;
@@ -116,13 +113,13 @@ svg {
 }
 
 .All {
-  min-height: 70vh;
+  min-height: 95vh;
   max-width: 50rem;
   margin: auto;
   &-h2 {
     margin: 2rem 0 8rem;
     padding-left: 5rem;
-    // background-color: aqua;
+
     color: #333;
     font-family: Raleway;
     font-size: 2.25rem;
@@ -132,14 +129,12 @@ svg {
   }
 
   &-ul {
-    // background-color: red;
     @include flex(column, nowrap, center, flex-start);
     gap: 5rem;
     // margin-bottom: 5rem;
   }
 
   &-li {
-    // background-color: white;
     font-size: clamp(1.5rem, 3vw, 2.5rem);
     font-weight: 500;
     line-height: 120%;
@@ -175,5 +170,30 @@ svg {
       opacity: 0.5;
       cursor: not-allowed;
     }
+  }
+}
+
+.Footer {
+  background-color: #333;
+  width: 100%;
+  height: 5vh;
+  color: #f2f2f2;
+  &-container {
+    @include flex(row, nowrap, space-between, center);
+    max-width: 50rem;
+    height: 5vh;
+    margin: auto;
+  }
+  &-p {
+    font-size: 1.125rem;
+    font-weight: 500;
+  }
+  &-icons {
+    @include flex(row, nowrap, space-between, center);
+    gap: 2rem;
+  }
+  &-svg {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }

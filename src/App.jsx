@@ -1,9 +1,13 @@
-import RandomQuote from './RandomQuote'
+import MainContent from './MainContent'
+import Random from './Random'
 
 function App() {
   return (
     <>
-      <RandomQuote />
+      <div className='Wrapper'>
+        <Random />
+        <MainContent />
+      </div>
     </>
   )
 }

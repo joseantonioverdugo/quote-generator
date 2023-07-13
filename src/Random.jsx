@@ -1,4 +1,8 @@
-export default function Random({ count, setCount }) {
+import { useContext } from 'react'
+import { DataContext } from './context/DataContext'
+
+export default function Random() {
+  const { count, setCount } = useContext(DataContext)
   const handleClick = () => {
     setCount(count + 1)
   }

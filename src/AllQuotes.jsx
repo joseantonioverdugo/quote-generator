@@ -1,37 +1,38 @@
-import { useState, useEffect } from 'react'
-import { useLocation, Link } from 'react-router-dom'
+import { useContext, useState, useEffect } from 'react'
+import { DataContext } from './context/DataContext'
+import { Link } from 'react-router-dom'
 import Random from './Random.jsx'
 
 export default function AllQuotes() {
-  const location = useLocation()
-  const searchParams = new URLSearchParams(location.search)
-  const authorSlug = searchParams.get('author')
+  const [quotes, setQuotes] = useState(null)
   const [limit, setLimit] = useState(4)
   const [page, setPage] = useState(1)
-  const [data, setData] = useState(null)
 
-  const fetchData = async () => {
-    const response = await fetch(
-      `https://api.quotable.io/quotes?author=${authorSlug}&limit=${limit}&page=${page}`
-    )
-    const data = await response.json()
-    setData(data)
-  }
+  const { author } = useContext(DataContext)
 
   useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(
+        `https://api.quotable.io/quotes?author=${author}&limit=${limit}&page=${page}`
+      )
+      const data = await response.json()
+      // Actualizar el estado con los nuevos datos
+      setQuotes(data)
+    }
+
     fetchData()
-  }, [page, limit])
+  }, [author, limit, page])
 
   return (
     <div>
-      {data && (
+      {quotes && (
         <div className='All'>
           <Link to='/'>
             <Random />
           </Link>
-          <h2 className='All-h2'>{data.results[0].author}</h2>
+          <h2 className='All-h2'>{quotes.author}</h2>
           <ul className='All-ul'>
-            {data.results.map((quote) => (
+            {quotes.results.map((quote) => (
               <li className='All-li' key={quote._id}>
                 {`“${quote.content}”`}
               </li>
@@ -52,7 +53,7 @@ export default function AllQuotes() {
               onClick={() => {
                 setPage(page + 1)
               }}
-              disabled={page === data.totalPages}>
+              disabled={page === quotes.totalPages}>
               Next
             </button>
           </div>

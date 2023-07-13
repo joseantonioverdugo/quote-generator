@@ -16,8 +16,8 @@ export default function AllQuotes() {
         `https://api.quotable.io/quotes?author=${author}&limit=${limit}&page=${page}`
       )
       const data = await response.json()
-      // Actualizar el estado con los nuevos datos
       setQuotes(data)
+      console.log(data)
     }
 
     fetchData()
@@ -30,7 +30,7 @@ export default function AllQuotes() {
           <Link to='/'>
             <Random />
           </Link>
-          <h2 className='All-h2'>{quotes.author}</h2>
+          <h2 className='All-h2'>{quotes.results[0].author}</h2>
           <ul className='All-ul'>
             {quotes.results.map((quote) => (
               <li className='All-li' key={quote._id}>

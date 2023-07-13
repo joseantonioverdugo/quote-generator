@@ -1,6 +1,6 @@
 ## Descripción
 
-Generador de citas célebres. Proyecto construido usando la API de [quotable](https://github.com/lukePeavey/quotable) para practicar el uso de React, SASS, consumo de APIS
+Generador de citas célebres. Proyecto construido usando la API de [quotable](https://github.com/lukePeavey/quotable) para practicar el uso de React, SASS, consumo de APIS y el manejo  de un estado global mediante Context API
 
 ## Tecnologías usadas
 

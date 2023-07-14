@@ -1,3 +1,10 @@
+![Imagen del proyecto](https://github.com/joseantonioverdugo/quote-generator/blob/main/src/assets/readme-img.jpg)
+
+## Ver ejemplo en vivo
+
+[![Live Site](https://img.shields.io/static/v1?label=&message=Live%20Site&color=6cccb4&style=for-the-badge)](https://quote-generator-alpha-six.vercel.app/)
+
+
 ## Descripción
 
 Generador de citas célebres. Proyecto construido usando la API de [quotable](https://github.com/lukePeavey/quotable) para practicar el uso de React, SASS, consumo de APIS y el manejo  de un estado global mediante Context API
@@ -16,10 +23,6 @@ Jose Antonio Verdugo
 
 [![linkedin](https://img.shields.io/static/v1?label=&message=linkedin&color=0e76a8&logo=linkedin&logoColor=white&style=for-the-badge)](https://www.linkedin.com/in/joseantonioverdugo/)
 [![github](https://img.shields.io/static/v1?label=&message=github&color=171515&logo=github&logoColor=white&style=for-the-badge)](https://github.com/joseantonioverdugo)
-
-## Ver ejemplo en vivo
-
-[![Live Site](https://img.shields.io/static/v1?label=&message=Live%20Site&color=6cccb4&style=for-the-badge)](https://quote-generator-alpha-six.vercel.app/)
 
 ## Instalación
 
